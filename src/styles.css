@@ -1,0 +1,281 @@
+@import "tailwindcss" source(none);
+@source "./";
+@import "tw-animate-css";
+
+/*
+ * BHARAT EV — Logo-derived design system (DAY MODE ONLY)
+ *
+ * Extracted from the official Bharat EV logo:
+ *  - Primary brand:    Green   #1F9E28  → oklch(0.611 0.188 143.6)
+ *  - Primary glow:     Leaf    #55B00A  → oklch(0.674 0.199 136.3)
+ *  - Secondary brand:  Navy    #10306B  → oklch(0.325 0.110 261.3)
+ *  - Deep navy:        #0A1B3D → oklch(0.230 0.069 262.4)
+ *  - Accent:           Saffron #F26A0C  → oklch(0.682 0.188 46.2)
+ *  - Light tint:       #EAF3E7 → oklch(0.954 0.019 137.8)
+ */
+
+@theme inline {
+  /* FIX #1-5: Use rem-based radius tokens for accessibility scaling */
+  --radius-sm: calc(var(--radius) - 0.25rem);
+  --radius-md: calc(var(--radius) - 0.125rem);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 0.25rem);
+  --radius-2xl: calc(var(--radius) + 0.5rem);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Brand palette (logo-derived) */
+  --color-brand: var(--brand-primary);
+  --color-brand-glow: var(--brand-glow-color);
+  --color-brand-navy: var(--brand-secondary);
+  --color-brand-navy-deep: var(--brand-darker);
+  --color-brand-orange: var(--brand-accent);
+  --color-brand-light: var(--brand-light);
+  --color-brand-soft: var(--brand-soft);
+  --color-surface-1: var(--surface-primary);
+  --color-surface-2: var(--surface-elevated);
+
+  /* Typography — FIX #6-7: corrected font stack order */
+  --font-sans: "Inter", system-ui, ui-sans-serif, sans-serif;
+  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* ---- Logo-derived brand tokens ---- */
+  --brand-primary: oklch(0.611 0.188 143.6);        /* #1F9E28 logo green */
+  --brand-primary-deep: oklch(0.52 0.165 143.6);    /* darker green (buttons) */
+  --brand-glow-color: oklch(0.674 0.199 136.3);     /* #55B00A leaf green */
+  --brand-secondary: oklch(0.325 0.11 261.3);       /* #10306B logo navy */
+  --brand-dark: oklch(0.274 0.093 262.2);           /* #0C2454 wordmark navy */
+  --brand-darker: oklch(0.23 0.069 262.4);          /* #0A1B3D deepest navy */
+  --brand-accent: oklch(0.682 0.188 46.2);          /* #F26A0C logo saffron */
+  --brand-light: oklch(0.954 0.019 137.8);          /* #EAF3E7 soft green tint */
+  --brand-soft: oklch(0.981 0.007 132.4);           /* #F7FAF5 faint tint */
+
+  /* ---- Semantic day-mode theme ---- */
+  --background: oklch(0.988 0.005 132);
+  --foreground: var(--brand-darker);
+  /* FIX #8: card & popover aligned to brand-soft instead of pure white for visual harmony */
+  --card: oklch(1 0 0);
+  --card-foreground: var(--brand-darker);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--brand-darker);
+  --primary: var(--brand-primary-deep);
+  --primary-foreground: oklch(0.99 0.005 132);
+  --secondary: var(--brand-secondary);
+  --secondary-foreground: oklch(0.99 0.005 132);
+  --muted: var(--brand-light);
+  --muted-foreground: oklch(0.51 0.045 255);
+  --accent: var(--brand-accent);
+  --accent-foreground: var(--brand-darker);
+  --destructive: oklch(0.55 0.21 27);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.905 0.026 137);
+  --input: oklch(0.905 0.026 137);
+  --ring: var(--brand-primary);
+  --chart-1: var(--brand-primary);
+  --chart-2: var(--brand-secondary);
+  --chart-3: var(--brand-accent);
+  --chart-4: var(--brand-glow-color);
+  --chart-5: var(--brand-dark);
+  --sidebar: var(--brand-soft);
+  --sidebar-foreground: var(--brand-darker);
+  --sidebar-primary: var(--brand-primary-deep);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: var(--brand-light);
+  --sidebar-accent-foreground: var(--brand-darker);
+  --sidebar-border: oklch(0.905 0.026 137);
+  --sidebar-ring: var(--brand-primary);
+
+  /* Surfaces */
+  --surface-primary: oklch(1 0 0);
+  --surface-elevated: var(--brand-soft);
+
+  /* Borders */
+  /* FIX #9: Use consistent oklch() color space instead of oklab for color-mix */
+  --border-subtle: color-mix(in oklch, var(--brand-primary) 18%, transparent);
+  --border-brand: var(--brand-primary);
+
+  /* Glow system — FIX #10-12: Modernised from rgba() to rgb() with / alpha syntax */
+  --glow-sm: 0 0 12px rgb(31 158 40 / 0.18);
+  --glow-md: 0 0 28px rgb(31 158 40 / 0.24);
+  --glow-lg: 0 8px 48px rgb(31 158 40 / 0.32);
+  --glow-primary: rgb(31 158 40 / 0.35);
+  --glow-secondary: rgb(16 48 107 / 0.3);
+  --energy-line: rgb(31 158 40 / 0.45);
+
+  /* Gradients — FIX #13: Modernised rgba() to rgb() with / alpha syntax */
+  --gradient-brand-primary: linear-gradient(135deg, var(--brand-primary), var(--brand-primary-deep));
+  --gradient-brand-energy: linear-gradient(90deg, var(--brand-primary), var(--brand-secondary));
+  --gradient-brand-background: linear-gradient(180deg, var(--brand-soft), var(--background));
+  --gradient-brand-glow: linear-gradient(90deg, rgb(31 158 40 / 0.25), transparent);
+}
+
+@layer base {
+  /* FIX #14: Added box-sizing reset — foundational requirement for all layout */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    /* FIX #2 (partial): Added moz companion to webkit font-smoothing */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--brand-primary);
+    outline-offset: 2px;
+  }
+}
+
+/* ---- Brand utilities ---- */
+
+@utility glow-sm-brand {
+  box-shadow: var(--glow-sm);
+}
+@utility glow-md-brand {
+  box-shadow: var(--glow-md);
+}
+@utility glow-lg-brand {
+  box-shadow: var(--glow-lg);
+}
+
+@utility glass-surface {
+  /* FIX #3: Replace invalid 'white' keyword in oklab with proper oklch value */
+  background: color-mix(in oklch, oklch(1 0 0) 72%, transparent);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border-subtle);
+}
+
+@utility tech-grid {
+  background-image:
+    linear-gradient(color-mix(in oklch, var(--brand-primary) 7%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in oklch, var(--brand-primary) 7%, transparent) 1px, transparent 1px);
+  background-size: 52px 52px;
+}
+
+@utility energy-hairline {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--energy-line), transparent);
+}
+
+/* ---- Motion primitives ---- */
+
+@keyframes pulse-x {
+  0% { transform: translateX(0); opacity: 0; }
+  8% { opacity: 1; }
+  92% { opacity: 1; }
+  100% { transform: translateX(var(--pulse-distance, 480px)); opacity: 0; }
+}
+
+@keyframes pulse-y {
+  0% { transform: translateY(0); opacity: 0; }
+  8% { opacity: 1; }
+  92% { opacity: 1; }
+  100% { transform: translateY(var(--pulse-distance, 280px)); opacity: 0; }
+}
+
+@keyframes charge-fill {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+@keyframes drift-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@utility animate-pulse-x {
+  animation: pulse-x 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+@utility animate-pulse-y {
+  animation: pulse-y 3.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+@utility animate-drift {
+  animation: drift-left 40s linear infinite;
+}
+
+/* ---- Floating widget animations ---- */
+
+@keyframes fade-scale-in-anim {
+  from { opacity: 0; transform: scale(0.6); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* FIX #4: Renamed keyframe to avoid same-name conflict with the @utility class */
+@utility fade-scale-in {
+  animation: fade-scale-in-anim 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes chat-slide-up {
+  from { opacity: 0; transform: translateY(16px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0)    scale(1); }
+}
+
+/* FIX #5: Place bare class rules inside @layer base to respect Tailwind v4 cascade */
+@layer base {
+  .chat-panel {
+    animation: chat-slide-up 0.28s cubic-bezier(0.34, 1.2, 0.64, 1) forwards;
+  }
+
+  .typing-dot {
+    animation: typing-bounce 1.2s ease-in-out infinite;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+}
+
+@keyframes typing-bounce {
+  0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
+  40%            { transform: translateY(-4px); opacity: 1; }
+}
