@@ -43,8 +43,6 @@ function Hero() {
             var(--gradient-brand-background)`,
         }}
       />
-      <div className="pointer-events-none absolute inset-0 tech-grid opacity-60" />
-
       <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-4 pb-20 md:grid-cols-[1.05fr_0.95fr] md:px-8 md:pb-28">
         <div>
           <Reveal>
