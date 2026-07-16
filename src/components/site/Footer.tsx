@@ -5,7 +5,7 @@ export function Footer() {
   return (
     <footer className="relative border-t border-brand/15 bg-surface-2">
       <div className="energy-hairline absolute inset-x-0 top-0" />
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 md:grid-cols-[1.4fr_1fr_1fr] md:px-8">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 md:grid-cols-[1.4fr_1fr_1fr_1fr] md:px-8">
         <div>
           <img
             src={logoAsset.url}
@@ -28,6 +28,24 @@ export function Footer() {
               { to: "/about", label: "About" },
               { to: "/partners", label: "Partners" },
               { to: "/contact", label: "Contact" },
+            ].map((l) => (
+              <Link
+                key={l.to}
+                to={l.to}
+                className="text-sm text-foreground/70 transition-colors hover:text-brand"
+              >
+                {l.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+        <div>
+          <p className="font-mono text-xs uppercase tracking-widest text-brand">Legal</p>
+          <nav className="mt-4 flex flex-col gap-2.5" aria-label="Footer Legal">
+            {[
+              { to: "/terms-and-conditions", label: "Terms & Conditions" },
+              { to: "/privacy-policy", label: "Privacy Policy" },
+              { to: "/refund-policy", label: "Refund Policy" },
             ].map((l) => (
               <Link
                 key={l.to}
