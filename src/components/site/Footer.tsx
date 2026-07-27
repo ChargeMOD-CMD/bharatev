@@ -60,9 +60,9 @@ export function Footer() {
         <div>
           <p className="font-mono text-xs uppercase tracking-widest text-brand">Contact</p>
           <div className="mt-4 space-y-2.5 text-sm text-foreground/70">
-            <p>hello@bharatev.in</p>
-            <p>+91 98765 43210</p>
-            <p>New Delhi · Mumbai · Bengaluru</p>
+            <p><a href="mailto:bhaaratev@gmail.com" className="transition-colors hover:text-brand">bhaaratev@gmail.com</a></p>
+            <p><a href="tel:+918901222728" className="transition-colors hover:text-brand">+91 89012 22728</a></p>
+            <p>New Delhi</p>
           </div>
         </div>
       </div>

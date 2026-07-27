@@ -122,7 +122,7 @@ function TermsAndConditions() {
           <h2 className="mb-3 text-2xl font-semibold text-foreground">Contact Us</h2>
           <p>For inquiries regarding these Terms, please contact us at:</p>
           <div className="mt-2 text-foreground">
-            <p><strong>Email:</strong> hello@bharatev.in</p>
+            <p><strong>Email:</strong> <a href="mailto:bhaaratev@gmail.com" className="transition-colors hover:text-brand">bhaaratev@gmail.com</a></p>
             <p><strong>Address:</strong> Bharat EV Corporate Office, New Delhi, India</p>
           </div>
         </section>

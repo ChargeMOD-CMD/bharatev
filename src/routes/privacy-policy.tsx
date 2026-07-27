@@ -120,8 +120,8 @@ function PrivacyPolicy() {
           <h2 className="mb-3 text-2xl font-semibold text-foreground">Contact Us</h2>
           <p>For any questions or concerns regarding this Privacy Policy, or if you wish to exercise your rights, please contact our Grievance Redressal Officer at:</p>
           <div className="mt-2 text-foreground">
-            <p><strong>Email:</strong> hello@bharatev.in</p>
-            <p><strong>Phone:</strong> +91 98765 43210</p>
+            <p><strong>Email:</strong> <a href="mailto:bhaaratev@gmail.com" className="transition-colors hover:text-brand">bhaaratev@gmail.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+918901222728" className="transition-colors hover:text-brand">+91 89012 22728</a></p>
             <p><strong>Address:</strong> Bharat EV Corporate Office, New Delhi, India</p>
           </div>
         </section>

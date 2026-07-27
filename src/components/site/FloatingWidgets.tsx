@@ -76,7 +76,7 @@ const knowledgeBase: KBEntry[] = [
   {
     patterns: [/\b(contact|email|phone|call|reach|talk|team|office|headquarters|hq|delhi|mumbai|bangalore|bengaluru)\b/i],
     reply: {
-      text: "📞 **Contact Bharat EV**\n\n📧 **Email:** hello@bharatev.in\n📱 **Phone:** +91 98765 43210\n🏢 **Offices:** New Delhi · Mumbai · Bengaluru\n\n💬 **WhatsApp:** Click the green WhatsApp button on this page for instant messaging!\n\n🌐 You can also fill in the **Contact form** (click *Contact* in the nav) and our team responds within 1 business day.",
+      text: "📞 **Contact Bharat EV**\n\n📧 **Email:** bhaaratev@gmail.com\n📱 **Phone:** +91 89012 22728\n🏢 **Offices:** New Delhi · Mumbai · Bengaluru\n\n💬 **WhatsApp:** Click the green WhatsApp button on this page for instant messaging!\n\n🌐 You can also fill in the **Contact form** (click *Contact* in the nav) and our team responds within 1 business day.",
     },
   },
   {
@@ -88,7 +88,7 @@ const knowledgeBase: KBEntry[] = [
   {
     patterns: [/\b(government|scheme|subsidy|fame|evse|policy|incentive|ministry)\b/i],
     reply: {
-      text: "🏛️ **Government & Policy**\n\nBharat EV aligns with India's EV charging ecosystem:\n\n✅ **FAME-II compliant** infrastructure\n✅ **BIS-certified** chargers (IS 17017)\n✅ Eligible for **state EV subsidies** in Maharashtra, Karnataka, Delhi & Tamil Nadu\n✅ Partnering with **NHAI** for highway corridor rollouts\n\nFor policy documentation or DISCOM coordination for your project, contact our business team at hello@bharatev.in.",
+      text: "🏛️ **Government & Policy**\n\nBharat EV aligns with India's EV charging ecosystem:\n\n✅ **FAME-II compliant** infrastructure\n✅ **BIS-certified** chargers (IS 17017)\n✅ Eligible for **state EV subsidies** in Maharashtra, Karnataka, Delhi & Tamil Nadu\n✅ Partnering with **NHAI** for highway corridor rollouts\n\nFor policy documentation or DISCOM coordination for your project, contact our business team at bhaaratev@gmail.com.",
     },
   },
   {
@@ -106,7 +106,7 @@ const knowledgeBase: KBEntry[] = [
 ];
 
 const FALLBACK_REPLIES = [
-  "That's a great question! I don't have specific details on that right now. For the most accurate information, please **email us at hello@bharatev.in** or call **+91 98765 43210**. Our team responds within 1 business day.",
+  "That's a great question! I don't have specific details on that right now. For the most accurate information, please **email us at bhaaratev@gmail.com** or call **+91 89012 22728**. Our team responds within 1 business day.",
   "I'm not sure about that specific detail. You can also reach us on **WhatsApp** using the green button on this page — our team is very responsive! 💬",
   "I don't have that info handy, but our contact team does! Try the **Contact page** or reach out on WhatsApp for a quick answer. 📞",
 ];

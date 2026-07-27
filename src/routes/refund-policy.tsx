@@ -102,7 +102,7 @@ function RefundPolicy() {
             Your satisfaction is our priority. If you have any questions or need assistance with cancellations or refunds, please reach out to us:
           </p>
           <div className="mt-2 text-foreground">
-            <p><strong>Email:</strong> hello@bharatev.in</p>
+            <p><strong>Email:</strong> <a href="mailto:bhaaratev@gmail.com" className="transition-colors hover:text-brand">bhaaratev@gmail.com</a></p>
           </div>
           <p className="mt-4">
             We are here to help you navigate your Bharat EV experience with ease and confidence!

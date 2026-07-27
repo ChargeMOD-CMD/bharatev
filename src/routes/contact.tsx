@@ -37,8 +37,8 @@ function ContactPage() {
             responds within one business day.
           </p>
           <div className="mt-10 space-y-4 font-mono text-sm text-foreground/80">
-            <p><span className="text-brand">E</span> — hello@bharatev.in</p>
-            <p><span className="text-brand">T</span> — +91 98765 43210</p>
+            <p><span className="text-brand">E</span> — <a href="mailto:bhaaratev@gmail.com" className="transition-colors hover:text-brand">bhaaratev@gmail.com</a></p>
+            <p><span className="text-brand">T</span> — <a href="tel:+918901222728" className="transition-colors hover:text-brand">+91 89012 22728</a></p>
             <p><span className="text-brand">HQ</span> — New Delhi · Mumbai · Bengaluru</p>
           </div>
         </Reveal>
