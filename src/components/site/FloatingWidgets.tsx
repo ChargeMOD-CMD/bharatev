@@ -105,11 +105,8 @@ const knowledgeBase: KBEntry[] = [
   },
 ];
 
-const FALLBACK_REPLIES = [
-  "That's a great question! I don't have specific details on that right now. For the most accurate information, please **email us at bhaaratev@gmail.com** or call **+91 89012 22728**. Our team responds within 1 business day.",
-  "I'm not sure about that specific detail. You can also reach us on **WhatsApp** using the green button on this page — our team is very responsive! 💬",
-  "I don't have that info handy, but our contact team does! Try the **Contact page** or reach out on WhatsApp for a quick answer. 📞",
-];
+const SORRY_REPLY =
+  "Sorry, I can only answer questions related to **Bharat EV** — our charging network, pricing, connectors, fleet solutions, partnerships or support. 🙏\n\nPlease ask me something about Bharat EV, or reach us directly:\n📧 bhaaratev@gmail.com\n📞 +91 89012 22728";
 
 function getBotReply(input: string): string {
   const trimmed = input.trim();
@@ -119,7 +116,7 @@ function getBotReply(input: string): string {
       return followUp ? `${text}\n\n💡 *${followUp}*` : text;
     }
   }
-  return FALLBACK_REPLIES[Math.floor(Math.random() * FALLBACK_REPLIES.length)];
+  return SORRY_REPLY;
 }
 
 /* ─────────────────────────────────────────────
@@ -277,21 +274,37 @@ function AIChatbot() {
 
   return (
     <>
+      {/* Mobile backdrop overlay */}
+      {open && (
+        <div
+          className="fixed inset-0 z-40 bg-black/50 md:hidden"
+          onClick={() => setOpen(false)}
+          aria-hidden="true"
+        />
+      )}
+
       {/* Chat panel */}
       {open && (
         <div
           id="bharat-ev-chatbot-panel"
-          className="chat-panel fixed bottom-24 right-4 z-50 flex w-[340px] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-2xl shadow-2xl md:right-6"
+          className="chat-panel fixed z-50 flex flex-col overflow-hidden shadow-2xl
+            bottom-0 left-0 right-0 rounded-t-2xl
+            md:bottom-24 md:left-auto md:right-6 md:w-[380px] md:rounded-2xl"
           style={{
-            background: "rgba(255,255,255,0.97)",
+            background: "rgba(255,255,255,0.98)",
             border: "1px solid rgba(31,158,40,0.2)",
             backdropFilter: "blur(20px)",
-            maxHeight: "min(520px, calc(100vh - 140px))",
+            height: "min(92dvh, 600px)",
           }}
         >
+          {/* Mobile drag handle */}
+          <div className="flex justify-center pt-2.5 pb-1 md:hidden">
+            <div className="h-1 w-10 rounded-full bg-gray-300" />
+          </div>
+
           {/* Header */}
           <div
-            className="flex items-center justify-between px-4 py-3.5"
+            className="flex items-center justify-between px-4 py-3"
             style={{ background: "linear-gradient(135deg, #1F9E28, #10306B)" }}
           >
             <div className="flex items-center gap-2.5">
@@ -345,11 +358,10 @@ function AIChatbot() {
                 )}
                 <div className="max-w-[78%]">
                   <div
-                    className={`rounded-2xl px-3 py-2 text-[12.5px] leading-relaxed ${
-                      msg.from === "user"
+                    className={`rounded-2xl px-3 py-2 text-[12.5px] leading-relaxed ${msg.from === "user"
                         ? "rounded-tr-sm text-white"
                         : "rounded-tl-sm bg-gray-50 text-gray-800"
-                    }`}
+                      }`}
                     style={
                       msg.from === "user"
                         ? { background: "linear-gradient(135deg,#1F9E28,#0f8520)" }
@@ -472,7 +484,7 @@ function WhatsAppButton() {
   return (
     <a
       id="whatsapp-chat-btn"
-      href="https://wa.me/919876543210?text=Hello%2C%20I%20am%20interested%20in%20Bharat%20EV%20charging%20services."
+      href="https://wa.me/918901222728?text=Hello%2C%20I%20am%20interested%20in%20Bharat%20EV%20charging%20services."
       target="_blank"
       rel="noopener noreferrer"
       className="flex items-center justify-center rounded-full shadow-lg transition-all duration-300 hover:scale-110 active:scale-95"
