@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "@/components/site/Reveal";
 import indiaImg from "@/assets/india-mobility.jpg";
+import kapilImg from "@/assets/kapil-md.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -80,6 +81,56 @@ function AboutPage() {
             </div>
           </Reveal>
         ))}
+      </section>
+
+      {/* Managing Director Section */}
+      <section className="border-t border-border/70 bg-card/30 px-4 py-20 md:py-28">
+        <div className="mx-auto max-w-7xl">
+          <Reveal>
+            <p className="font-mono text-xs uppercase tracking-[0.35em] text-brand text-center">
+              Leadership
+            </p>
+            <h2 className="mt-4 text-center font-display text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">
+              Meet Our Managing Director
+            </h2>
+          </Reveal>
+
+          <Reveal delay={0.15}>
+            <div className="mx-auto mt-16 flex max-w-3xl flex-col items-center gap-10 rounded-2xl border border-border bg-card p-10 shadow-lg md:flex-row md:gap-14">
+              {/* Photo */}
+              <div className="relative shrink-0">
+                <div
+                  className="absolute -inset-1 rounded-full opacity-60"
+                  style={{ background: "linear-gradient(135deg, var(--color-brand), var(--color-secondary))" }}
+                />
+                <img
+                  src={kapilImg}
+                  alt="Kapil — Managing Director, Bharat EV"
+                  width={200}
+                  height={200}
+                  loading="lazy"
+                  className="relative h-48 w-48 rounded-full object-cover object-top ring-4 ring-background"
+                />
+              </div>
+
+              {/* Details */}
+              <div className="text-center md:text-left">
+                <span className="font-mono text-xs uppercase tracking-[0.3em] text-brand">
+                  Managing Director
+                </span>
+                <h3 className="mt-3 font-display text-4xl font-extrabold tracking-tight text-foreground">
+                  Kapil
+                </h3>
+                <div className="mt-3 h-0.5 w-12 bg-brand md:mx-0 mx-auto" />
+                <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground">
+                  Driving Bharat EV's vision of a fully-charged India, Kapil leads the company's
+                  strategic direction, partnerships and infrastructure expansion across the nation's
+                  highways and urban corridors.
+                </p>
+              </div>
+            </div>
+          </Reveal>
+        </div>
       </section>
     </main>
   );
