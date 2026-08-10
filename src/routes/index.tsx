@@ -74,10 +74,10 @@ function Hero() {
                 Explore the Network <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
-                to="/partners"
+                to="/about"
                 className="inline-flex items-center gap-2 rounded-md border border-brand/40 px-7 py-3.5 font-mono text-sm uppercase tracking-widest text-foreground transition-colors hover:border-brand hover:text-brand"
               >
-                Become a Partner
+                About Us
               </Link>
             </div>
           </Reveal>
