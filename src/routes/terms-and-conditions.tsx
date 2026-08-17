@@ -100,7 +100,7 @@ function TermsAndConditions() {
         <section>
           <h2 className="mb-3 text-2xl font-semibold text-foreground">Governing Law</h2>
           <p>
-            These Terms are governed by Indian law, with the courts in New Delhi having exclusive jurisdiction.
+            These Terms are governed by Indian law, with the courts in Sonipat having exclusive jurisdiction.
           </p>
         </section>
 
@@ -123,7 +123,7 @@ function TermsAndConditions() {
           <p>For inquiries regarding these Terms, please contact us at:</p>
           <div className="mt-2 text-foreground">
             <p><strong>Email:</strong> <a href="mailto:bhaaratev@gmail.com" className="transition-colors hover:text-brand">bhaaratev@gmail.com</a></p>
-            <p><strong>Address:</strong> Bharat EV Corporate Office, New Delhi, India</p>
+            <p><strong>Address:</strong> B-3, SEC-21A, Phase-1 Industrial Estate, HSIIDC Industrial Area, Barhi, Sonipat, Haryana – 131101, India</p>
           </div>
         </section>
       </div>

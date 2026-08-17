@@ -594,6 +594,22 @@ function FinalCta() {
             >
               View the Network
             </Link>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.bpm.bharatev"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-md border border-brand/50 bg-background/10 backdrop-blur-sm px-8 py-4 font-mono text-sm uppercase tracking-widest text-white transition-colors hover:border-brand-glow hover:text-brand-glow"
+            >
+              Get Android App
+            </a>
+            <a
+              href="https://apps.apple.com/in/app/bharat-ev/id6796278883"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-md border border-brand/50 bg-background/10 backdrop-blur-sm px-8 py-4 font-mono text-sm uppercase tracking-widest text-white transition-colors hover:border-brand-glow hover:text-brand-glow"
+            >
+              Get iOS App
+            </a>
           </div>
         </Reveal>
       </div>

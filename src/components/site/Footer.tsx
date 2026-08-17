@@ -62,7 +62,27 @@ export function Footer() {
           <div className="mt-4 space-y-2.5 text-sm text-foreground/70">
             <p><a href="mailto:bhaaratev@gmail.com" className="transition-colors hover:text-brand">bhaaratev@gmail.com</a></p>
             <p><a href="tel:+918901222728" className="transition-colors hover:text-brand">+91 89012 22728</a></p>
-            <p>New Delhi</p>
+            <p>B-3, SEC-21A, Phase-1 Industrial Estate, HSIIDC Industrial Area, Barhi, Sonipat, Haryana – 131101, India</p>
+          </div>
+          
+          <p className="mt-8 font-mono text-xs uppercase tracking-widest text-brand">Get the App</p>
+          <div className="mt-4 flex flex-col gap-2.5">
+            <a
+              href="https://play.google.com/store/apps/details?id=com.bpm.bharatev"
+              target="_blank"
+              rel="noreferrer"
+              className="text-sm text-foreground/70 transition-colors hover:text-brand"
+            >
+              Android / Google Play
+            </a>
+            <a
+              href="https://apps.apple.com/in/app/bharat-ev/id6796278883"
+              target="_blank"
+              rel="noreferrer"
+              className="text-sm text-foreground/70 transition-colors hover:text-brand"
+            >
+              iOS / Apple App Store
+            </a>
           </div>
         </div>
       </div>

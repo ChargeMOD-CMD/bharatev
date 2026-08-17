@@ -35,7 +35,7 @@ function RefundPolicy() {
               <h3 className="mb-2 text-xl font-medium text-foreground">Definitions</h3>
               <ul className="mt-2 list-inside list-disc space-y-1">
                 <li><strong>Application:</strong> The software provided by Bharat EV, accessible via any electronic device.</li>
-                <li><strong>Company:</strong> Bharat EV Private Limited, operating under Bharat EV, located at Bharat EV Corporate Office, New Delhi, India.</li>
+                <li><strong>Company:</strong> Bharat EV Private Limited, operating under Bharat EV, located at B-3, SEC-21A, Phase-1 Industrial Estate, HSIIDC Industrial Area, Barhi, Sonipat, Haryana – 131101, India.</li>
                 <li><strong>Goods:</strong> Items such as chargers, RFID cards, and accessories offered for sale on our Service.</li>
                 <li><strong>Subscription Plans:</strong> Service-based plans to access charging solutions at Bharat EV stations.</li>
                 <li><strong>Wallet:</strong> Preloaded funds used within the Bharat EV app for charging transactions.</li>
@@ -89,7 +89,7 @@ function RefundPolicy() {
           <div className="mt-2 mb-4 text-foreground">
             <p>Bharat EV Private Limited</p>
             <p>Bharat EV Corporate Office</p>
-            <p>New Delhi, India</p>
+            <p>B-3, SEC-21A, Phase-1 Industrial Estate, HSIIDC Industrial Area, Barhi, Sonipat, Haryana – 131101, India</p>
           </div>
           <p>
             <strong>Important Note:</strong> We are not responsible for items lost or damaged during return shipping. We recommend using an insured and trackable mail service. Refunds or replacements will only be processed upon receipt of the returned goods.

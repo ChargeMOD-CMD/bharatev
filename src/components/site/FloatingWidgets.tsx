@@ -76,7 +76,7 @@ const knowledgeBase: KBEntry[] = [
   {
     patterns: [/\b(contact|email|phone|call|reach|talk|team|office|headquarters|hq|delhi|mumbai|bangalore|bengaluru)\b/i],
     reply: {
-      text: "📞 **Contact Bharat EV**\n\n📧 **Email:** bhaaratev@gmail.com\n📱 **Phone:** +91 89012 22728\n🏢 **Offices:** New Delhi · Mumbai · Bengaluru\n\n💬 **WhatsApp:** Click the green WhatsApp button on this page for instant messaging!\n\n🌐 You can also fill in the **Contact form** (click *Contact* in the nav) and our team responds within 1 business day.",
+      text: "📞 **Contact Bharat EV**\n\n📧 **Email:** bhaaratev@gmail.com\n📱 **Phone:** +91 89012 22728\n🏢 **Office:** B-3, SEC-21A, Phase-1 Industrial Estate, HSIIDC Industrial Area, Barhi, Sonipat, Haryana – 131101, India\n\n💬 **WhatsApp:** Click the green WhatsApp button on this page for instant messaging!\n\n🌐 You can also fill in the **Contact form** (click *Contact* in the nav) and our team responds within 1 business day.",
     },
   },
   {

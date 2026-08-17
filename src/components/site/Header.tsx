@@ -1,6 +1,6 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { Menu, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { ChevronDown, Menu, X } from "lucide-react";
+import { useEffect, useState, useRef } from "react";
 import logoAsset from "@/assets/bharat-ev-logo.png.asset.json";
 
 const nav = [
@@ -15,13 +15,26 @@ const nav = [
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [appDropdownOpen, setAppDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    
+    const onClickOutside = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setAppDropdownOpen(false);
+      }
+    };
+    window.addEventListener("click", onClickOutside);
+    
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("click", onClickOutside);
+    };
   }, []);
 
   useEffect(() => {
@@ -64,7 +77,35 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-4">
+          <div className="hidden relative lg:block" ref={dropdownRef}>
+            <button
+              onClick={() => setAppDropdownOpen(!appDropdownOpen)}
+              className="flex items-center gap-1.5 font-mono text-[13px] uppercase tracking-widest text-foreground/70 transition-colors hover:text-brand"
+            >
+              Application <ChevronDown className={`h-4 w-4 transition-transform ${appDropdownOpen ? 'rotate-180' : ''}`} />
+            </button>
+            {appDropdownOpen && (
+              <div className="absolute right-0 top-full mt-4 flex w-52 flex-col gap-3 rounded-md border border-brand/20 bg-background/95 p-4 shadow-lg backdrop-blur-md">
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.bpm.bharatev"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-mono text-xs uppercase tracking-widest text-foreground/80 transition-colors hover:text-brand"
+                >
+                  Android / Play Store
+                </a>
+                <a
+                  href="https://apps.apple.com/in/app/bharat-ev/id6796278883"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-mono text-xs uppercase tracking-widest text-foreground/80 transition-colors hover:text-brand"
+                >
+                  iOS / App Store
+                </a>
+              </div>
+            )}
+          </div>
           <Link
             to="/partners"
             className="hidden rounded-md bg-primary px-5 py-2.5 font-mono text-[13px] uppercase tracking-widest text-primary-foreground transition-all hover:brightness-110 glow-sm-brand lg:inline-flex"
@@ -96,6 +137,33 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
+            <div className="mt-4 flex flex-col rounded-md border border-brand/15 bg-surface-2 p-4">
+              <button 
+                onClick={() => setAppDropdownOpen(!appDropdownOpen)}
+                className="flex items-center justify-between w-full font-mono text-sm uppercase tracking-widest text-brand"
+              >
+                Application <ChevronDown className={`h-4 w-4 transition-transform ${appDropdownOpen ? 'rotate-180' : ''}`} />
+              </button>
+              
+              <div className={`flex flex-col gap-3 overflow-hidden transition-all ${appDropdownOpen ? 'mt-4 max-h-40 opacity-100' : 'max-h-0 opacity-0'}`}>
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.bpm.bharatev"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-mono text-sm uppercase tracking-widest text-foreground/80 transition-colors hover:text-brand"
+                >
+                  Android / Google Play
+                </a>
+                <a
+                  href="https://apps.apple.com/in/app/bharat-ev/id6796278883"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-mono text-sm uppercase tracking-widest text-foreground/80 transition-colors hover:text-brand"
+                >
+                  iOS / Apple App Store
+                </a>
+              </div>
+            </div>
             <Link
               to="/partners"
               className="mt-4 rounded-md bg-primary px-5 py-3 text-center font-mono text-sm uppercase tracking-widest text-primary-foreground"

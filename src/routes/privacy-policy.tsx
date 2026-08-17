@@ -122,7 +122,7 @@ function PrivacyPolicy() {
           <div className="mt-2 text-foreground">
             <p><strong>Email:</strong> <a href="mailto:bhaaratev@gmail.com" className="transition-colors hover:text-brand">bhaaratev@gmail.com</a></p>
             <p><strong>Phone:</strong> <a href="tel:+918901222728" className="transition-colors hover:text-brand">+91 89012 22728</a></p>
-            <p><strong>Address:</strong> Bharat EV Corporate Office, New Delhi, India</p>
+            <p><strong>Address:</strong> B-3, SEC-21A, Phase-1 Industrial Estate, HSIIDC Industrial Area, Barhi, Sonipat, Haryana – 131101, India</p>
           </div>
         </section>
       </div>
