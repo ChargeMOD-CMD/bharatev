@@ -16,6 +16,7 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [appDropdownOpen, setAppDropdownOpen] = useState(false);
+  const [mobileAppOpen, setMobileAppOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
 
@@ -39,6 +40,7 @@ export function Header() {
 
   useEffect(() => {
     setOpen(false);
+    setMobileAppOpen(false);
   }, [pathname]);
 
   return (
@@ -139,13 +141,16 @@ export function Header() {
             ))}
             <div className="mt-4 flex flex-col rounded-md border border-brand/15 bg-surface-2 p-4">
               <button 
-                onClick={() => setAppDropdownOpen(!appDropdownOpen)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setMobileAppOpen(!mobileAppOpen);
+                }}
                 className="flex items-center justify-between w-full font-mono text-sm uppercase tracking-widest text-brand"
               >
-                Application <ChevronDown className={`h-4 w-4 transition-transform ${appDropdownOpen ? 'rotate-180' : ''}`} />
+                Application <ChevronDown className={`h-4 w-4 transition-transform ${mobileAppOpen ? 'rotate-180' : ''}`} />
               </button>
               
-              <div className={`flex flex-col gap-3 overflow-hidden transition-all ${appDropdownOpen ? 'mt-4 max-h-40 opacity-100' : 'max-h-0 opacity-0'}`}>
+              <div className={`flex flex-col gap-3 overflow-hidden transition-all ${mobileAppOpen ? 'mt-4 max-h-40 opacity-100' : 'max-h-0 opacity-0'}`}>
                 <a
                   href="https://play.google.com/store/apps/details?id=com.bpm.bharatev"
                   target="_blank"
